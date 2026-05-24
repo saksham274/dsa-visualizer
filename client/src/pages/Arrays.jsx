@@ -1,9 +1,7 @@
+import ArrayVisualizer from '../components/ArrayVisualizer/ArrayVisualizer'
+
 function Arrays() {
-  return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Array Visualizer</h2>
-    </div>
-  )
+  return <ArrayVisualizer />
 }
 
 export default Arrays
