@@ -1,9 +1,7 @@
+import SortingVisualizer from '../components/SortingVisualizer/SortingVisualizer'
+
 function Sorting() {
-  return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Sorting Visualizer</h2>
-    </div>
-  )
+  return <SortingVisualizer />
 }
 
 export default Sorting
