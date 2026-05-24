@@ -1,9 +1,7 @@
+import GraphVisualizer from '../components/GraphVisualizer/GraphVisualizer'
+
 function Graphs() {
-  return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Graph Visualizer</h2>
-    </div>
-  )
+  return <GraphVisualizer />
 }
 
 export default Graphs
