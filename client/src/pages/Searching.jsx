@@ -1,9 +1,7 @@
+import SearchingVisualizer from '../components/SearchingVisualizer/SearchingVisualizer'
+
 function Searching() {
-  return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Searching Visualizer</h2>
-    </div>
-  )
+  return <SearchingVisualizer />
 }
 
 export default Searching
