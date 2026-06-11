@@ -1,12 +1,21 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 import './Navbar.css'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
 
   function closeMenu() {
     setIsOpen(false)
+  }
+
+  function handleLogout() {
+    logout()
+    navigate('/')
+    closeMenu()
   }
 
   return (
@@ -15,7 +24,6 @@ function Navbar() {
         <NavLink to="/" onClick={closeMenu}>DSA Visualizer</NavLink>
       </div>
 
-      {/* hamburger button — only visible on mobile */}
       <button
         className="hamburger"
         onClick={() => setIsOpen(!isOpen)}
@@ -34,6 +42,22 @@ function Navbar() {
         <NavLink to="/stack-queue" onClick={closeMenu}>Stack & Queue</NavLink>
         <NavLink to="/trees" onClick={closeMenu}>Trees</NavLink>
         <NavLink to="/graphs" onClick={closeMenu}>Graphs</NavLink>
+
+        {user ? (
+          <>
+            <span className="navbar-username">Hi, {user.username}</span>
+            <button className="navbar-logout" onClick={handleLogout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <NavLink to="/login" onClick={closeMenu}>Login</NavLink>
+            <NavLink to="/register" className="navbar-register" onClick={closeMenu}>
+              Register
+            </NavLink>
+          </>
+        )}
       </div>
     </nav>
   )

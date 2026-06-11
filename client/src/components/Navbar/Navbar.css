@@ -102,3 +102,38 @@
     border-bottom: none;
   }
 }
+
+.navbar-username {
+  color: #38bdf8;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.navbar-logout {
+  background: none;
+  border: 1px solid #f87171;
+  color: #f87171;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.navbar-logout:hover {
+  background-color: #f87171;
+  color: #0f172a;
+}
+
+.navbar-register {
+  background-color: #38bdf8;
+  color: #0f172a !important;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  border-bottom: none !important;
+}
+
+.navbar-register:hover {
+  opacity: 0.85;
+}
