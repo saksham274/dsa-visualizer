@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from 'react'
+import { getProfile } from '../utils/api'
 
 const AuthContext = createContext()
 
@@ -7,13 +8,19 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  // on app load check if user was previously logged in
   useEffect(() => {
     const savedToken = localStorage.getItem('token')
     const savedUser = localStorage.getItem('user')
     if (savedToken && savedUser) {
       setToken(savedToken)
       setUser(JSON.parse(savedUser))
+      // fetch fresh profile from server to get latest progress
+      getProfile(savedToken).then((data) => {
+        if (data && !data.message) {
+          setUser(data)
+          localStorage.setItem('user', JSON.stringify(data))
+        }
+      })
     }
     setLoading(false)
   }, [])
@@ -32,14 +39,26 @@ export function AuthProvider({ children }) {
     localStorage.removeItem('user')
   }
 
+  function updateUserProgress(topic) {
+    setUser((prev) => {
+      const updated = {
+        ...prev,
+        progress: { ...prev.progress, [topic]: true }
+      }
+      localStorage.setItem('user', JSON.stringify(updated))
+      return updated
+    })
+  }
+
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, loading }}>
+    <AuthContext.Provider
+      value={{ user, token, login, logout, loading, updateUserProgress }}
+    >
       {children}
     </AuthContext.Provider>
   )
 }
 
-// custom hook to use auth anywhere
 export function useAuth() {
   return useContext(AuthContext)
 }

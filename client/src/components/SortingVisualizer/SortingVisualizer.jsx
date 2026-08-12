@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import './SortingVisualizer.css'
+import ProgressButton from '../ProgressButton/ProgressButton'
 
 const ALGORITHMS = ['Bubble Sort', 'Selection Sort', 'Insertion Sort']
 
@@ -368,6 +369,7 @@ function SortingVisualizer() {
           )}
         </div>
       </div>
+      <ProgressButton topic="sorting" />
 
     </div>
   )

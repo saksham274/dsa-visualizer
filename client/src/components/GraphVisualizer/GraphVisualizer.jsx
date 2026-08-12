@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './GraphVisualizer.css'
+import ProgressButton from '../ProgressButton/ProgressButton'
 
 // default graph — nodes with x,y positions and adjacency list
 const DEFAULT_NODES = [
@@ -418,6 +419,7 @@ function GraphVisualizer() {
           )}
         </div>
       </div>
+      <ProgressButton topic="graphs" />
 
     </div>
   )

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './StackQueueVisualizer.css'
+import ProgressButton from '../ProgressButton/ProgressButton'
 
 function StackQueueVisualizer() {
   const [mode, setMode] = useState('Stack')
@@ -284,6 +285,7 @@ function StackQueueVisualizer() {
           )}
         </div>
       </div>
+      <ProgressButton topic="stackQueue" />
 
     </div>
   )

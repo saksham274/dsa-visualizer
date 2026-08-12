@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import './SearchingVisualizer.css'
+import ProgressButton from '../ProgressButton/ProgressButton'
 
 const COLORS = {
   default: '#38bdf8',
@@ -331,6 +332,7 @@ function SearchingVisualizer() {
           )}
         </div>
       </div>
+      <ProgressButton topic="searching" />
 
     </div>
   )

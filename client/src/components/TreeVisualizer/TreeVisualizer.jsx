@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './TreeVisualizer.css'
+import ProgressButton from '../ProgressButton/ProgressButton'
 
 // ── BST NODE ──
 class Node {
@@ -388,6 +389,7 @@ function TreeVisualizer() {
           </div>
         </div>
       </div>
+      <ProgressButton topic="trees" />
 
     </div>
   )

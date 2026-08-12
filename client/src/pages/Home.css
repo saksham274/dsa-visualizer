@@ -73,3 +73,65 @@
   color: var(--card-color);
   font-weight: 600;
 }
+
+.progress-section {
+  max-width: 500px;
+  margin: 1.5rem auto 0;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #1e293b;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #38bdf8;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.topic-card.completed {
+  border-color: var(--card-color);
+  opacity: 0.85;
+}
+
+.completed-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #0f172a;
+  color: var(--card-color);
+  border: 1px solid var(--card-color);
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
+}
+
+.login-hint {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.login-hint span {
+  color: #38bdf8;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-hint span:hover {
+  text-decoration: underline;
+}

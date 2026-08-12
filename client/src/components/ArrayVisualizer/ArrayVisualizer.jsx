@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './ArrayVisualizer.css'
+import ProgressButton from '../ProgressButton/ProgressButton'
 
 function ArrayVisualizer() {
   const [array, setArray] = useState([10, 25, 8, 42, 16, 35])
@@ -149,6 +150,8 @@ function ArrayVisualizer() {
           </div>
         </div>
       </div>
+
+      <ProgressButton topic="arrays" />
 
     </div>
   )

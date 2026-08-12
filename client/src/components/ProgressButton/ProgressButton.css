@@ -1,0 +1,45 @@
+.progress-btn-wrapper {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #334155;
+}
+
+.progress-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.progress-btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.progress-btn.completed {
+  background-color: #4ade80;
+  cursor: default;
+}
+
+.progress-btn:disabled {
+  cursor: not-allowed;
+}
+
+.progress-login-hint {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.progress-login-hint span {
+  color: #38bdf8;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.progress-login-hint span:hover {
+  text-decoration: underline;
+}
